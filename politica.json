@@ -1,0 +1,5 @@
+{
+  "porta_permitida": 443,
+  "tamanho_min_senha": 12,
+  "modo_debug": false
+}
