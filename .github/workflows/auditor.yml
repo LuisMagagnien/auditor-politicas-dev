@@ -1,0 +1,27 @@
+name: DevSecOps Policy Auditor
+
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  auditar-seguranca:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Copiar código do repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar o Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    
+    - name: Rodar o Auditor de Segurança
+      run: python src/auditor.py
